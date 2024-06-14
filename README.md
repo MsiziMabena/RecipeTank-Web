@@ -1,1 +1,3 @@
-# St10353156 PROG6221 POE Part 3
+##Instructions on how to compile and run my software
+The following explains how you can open, compile, run the software:
+You first extract the folder the project will be zipped in. For the second step, after you opened the folder that you just extracted you will find another folder named St10353156 PROG6221 POE Part 3. You open that folder the you locate the .sin file. The .sln file will be named St10353156 PROG6221 POE Part 3.sln then you open it. After opening this file in the visual studio 2022. Now all your source code will be compiled within the visual studio 2022. To run the whole source code you can click the top green button with the text 'Start' next to it then program will execute.
