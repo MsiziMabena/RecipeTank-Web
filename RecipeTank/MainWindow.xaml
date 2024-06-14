@@ -1,0 +1,76 @@
+﻿<Window x:Class="RecipeTank.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecipeTank"
+        mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}"
+        Title="Private Recipe App" Height="800" Width="1401">
+    <Window.Background>
+        <ImageBrush ImageSource="/background.jpeg"/>
+    </Window.Background>
+    <Grid Margin="10, 20" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="185*"/>
+            <RowDefinition Height="503*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="StackPanel" Orientation="Horizontal" VerticalAlignment="Top" 
+                    HorizontalAlignment="Left" Margin="-190,296,0,0" Grid.Row="1">
+            <Label x:Name="Messages" Content="" Margin="0, 0, 20, 0"/>
+            <Button Click="DeleteRecipe_Click" x:Name="DeleteRecipe"
+                    Content="Delete Existing Recipe" Style="{StaticResource defaultButton}"
+                    Padding="10, 10, 10, 10" Background="#FFEAE227" />
+        </StackPanel>
+
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" 
+               Margin="56,12,-217,-74" MinWidth="1140" MinHeight="750" Grid.ColumnSpan="3" Navigated="MainFrame_Navigated" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.RowSpan="2" >
+            <Frame.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.576"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Frame.RenderTransform>
+        </Frame>
+
+        <Label Content="Label" HorizontalAlignment="Left" Margin="10, 0, 0, 0" 
+               VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="1"/>
+        <Button Click="AddRecipe_Click" x:Name="InsertRecipe"
+                    Content="Insert A New Recipe " Style="{StaticResource defaultButton}"
+                    Padding="10, 10, 10, 10" Margin="-159,130,37,10" Background="#FFBD3E02" />
+        <Button Click="DisplayRecipe_Click" x:Name="DisplayRecipe" 
+                    Content="Display All the Recipes" Style="{StaticResource defaultButton}" 
+                    Padding="10, 10, 10, 10" Margin="-159,24,37,415" Background="#FF085BE0" Grid.Row="1" />
+        <Button Click="ScaleRecipe_Click" x:Name="ScaleRecipe" 
+                    Content="Scale Recipe" Style="{StaticResource defaultButton}" 
+                    Padding="10, 10, 10, 10" Margin="-160,114,38,325" Background="#FF7C16B9" Grid.Row="1" />
+        <Button Click="PieChart_Click" x:Name="PieChart"
+                    Content="Pie Chart" Style="{StaticResource defaultButton}"
+                    Padding="10, 10, 10, 10" Margin="-159,206,37,233" Background="#FF76F511" Grid.Row="1" />
+        <Label Grid.Column="2" Content="RECIPE TANK" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Impact" Width="281" Height="65"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="-127,-6,0,0" VerticalAlignment="Top" Height="119" Width="190" Grid.ColumnSpan="2">
+            <Label.Background>
+                <ImageBrush ImageSource="/download.jpeg"/>
+            </Label.Background>
+        </Label>
+        <Label Grid.Column="1" Content="made for easy and fast recipe storage" HorizontalAlignment="Left" Margin="1,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="219" FontFamily="SimSun-ExtB" FontSize="11">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-30.442"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+    </Grid>
+</Window>

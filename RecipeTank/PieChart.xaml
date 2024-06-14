@@ -1,0 +1,57 @@
+﻿<Page x:Class="RecipeTank.PieChart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespaceRecipeTank" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      mc:Ignorable="d" 
+     d:Style="{StaticResource PageStyle}"
+      Title="Analyize Menu">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="640" Width="992">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Food Group Analysis" Style="{StaticResource PageHeader}"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+        <Label x:Name="ErrorMessage" Style="{StaticResource ErrorLabel}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"
+               Content="" />
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="312,82,-552,10" Grid.RowSpan="3">
+            <ComboBox x:Name="SelectRecCB" Style="{StaticResource InputComboBox}" Margin="0, 0, 0, 20" Width="454" Height="40" >
+            </ComboBox>
+            <StackPanel Orientation="Horizontal" Width="639">
+                <Button Content="Display In Menu" x:Name="AddToMenu" Click="AddToMenu_Click" Style="{StaticResource defaultButton}" Background="#FF76F511" Width="221" />
+                <Button Content="Remove from Menu" x:Name="RemoveFromMenu" Click="RemoveFromMenu_Click" Style="{StaticResource defaultButton}"
+                        Margin="30, 0, 0, 0" Background="#FF76F511" Width="214"/>
+            </StackPanel>
+            <StackPanel x:Name="RecipeTable" MinHeight="150" Background="#eceff1" Height="416">
+                <Label Content="MENU:" Height="41" />
+            </StackPanel>
+        </StackPanel>
+
+
+
+        <lvc:PieChart x:Name="DataPie"  LegendLocation="Bottom" Series="{Binding seriesCollection}" 
+                      Hoverable="True" InnerRadius="0" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,12,344,10" Grid.RowSpan="3">
+            <lvc:PieChart.ChartLegend>
+                <lvc:DefaultLegend BulletSize="15" TextBlock.FontSize="20" Foreground="White"></lvc:DefaultLegend>
+            </lvc:PieChart.ChartLegend>
+            <lvc:PieChart.DataTooltip>
+                <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>
+            </lvc:PieChart.DataTooltip>
+        </lvc:PieChart>
+        <Label Grid.Column="2" Content="CHOOSE RECIPE TO DISPLAY" HorizontalAlignment="Left" Margin="230,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="398" FontSize="24" FontFamily="Arial Black" Background="#FF46BD1D"/>
+
+    </Grid>
+</Page>
